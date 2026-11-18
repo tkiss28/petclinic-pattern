@@ -3,4 +3,8 @@ clusterGroup:
   namespaces:
     petclinic-pattern:
   subscriptions: {}
-  applications: {}
+  applications:
+    petclinic:
+      name: petclinic
+      namespace: petclinic-pattern
+      path: charts/petclinic

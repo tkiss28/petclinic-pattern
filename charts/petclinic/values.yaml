@@ -1,0 +1,10 @@
+petclinic:
+  # Build spring-petclinic/Containerfile, publish it, and set this in values-global.yaml.
+  image: ""
+  resources:
+    requests:
+      cpu: 100m
+      memory: 512Mi
+    limits:
+      cpu: "1"
+      memory: 1Gi

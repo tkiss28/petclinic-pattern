@@ -2,18 +2,19 @@
 # documentation and qe
 metadata_version: "1.0"
 name: petclinic-pattern
-description: A patter with spring-petclinic for first-hand experiment
+description: A single-cluster Spring Petclinic learning lab with an ephemeral H2 database
 pattern_version: "1.0"
 display_name: Petclinic Pattern
 repo_url: https://github.com/tkiss28/petclinic-pattern
-docs_repo_url: https://github.com/validatedpatterns/docs
+docs_repo_url: https://github.com/tkiss28/petclinic-pattern
 issues_url: https://github.com/tkiss28/petclinic-pattern/issues
-docs_url: https://validatedpatterns.io/patterns/multicloud-gitops/
-ci_url: https://validatedpatterns.io/ci/?pattern=mcgitops
-logo: https://validatedpatterns.io/images/logos/multicloud-gitops.png
+docs_url: https://github.com/tkiss28/petclinic-pattern#readme
+# No CI workflow is configured yet; do not claim the Multicloud GitOps CI results.
+ci_url: https://github.com/tkiss28/petclinic-pattern/actions
 # can be sandbox, tested or maintained
 tier: sandbox
 owners: tkiss28
+# Inherited reference sizing, not tested minimums for this lab.
 requirements:
   hub: # Main cluster
     compute:
@@ -65,14 +66,15 @@ requirements:
 # Loosely defined extra features like hypershift support, non-openshift
 # kubernetes support, spoke support
 extra_features:
-  hypershift_support: true
-  spoke_support: true
+  hypershift_support: false
+  spoke_support: false
 
 external_requirements:
-# external quay, s3 bucket, agof tokens to access paywalled material, manifests, rag-llm hw (only selected regions)
+  cluster_sizing_note: >-
+    Cluster sizing has not been validated for this sandbox. The inherited sizing
+    above is reference material only. This pattern deploys to one existing cluster;
+    no spoke is used. Allow capacity for OpenShift GitOps and the Petclinic pod.
 variants:
-  - name: hub
+  - name: prod
     default: true
-    description: Default multicluster hub/spoke Multicloud Gitops variant
-  - name: standalone
-    description: Single cluster Multicloud Gitops (no ACM) variant
+    description: Single-cluster Petclinic with H2, without ACM or Vault

@@ -1,0 +1,8 @@
+apiVersion: v2
+name: petclinic
+description: Spring Petclinic with an ephemeral H2 database for an OpenShift lab
+type: application
+version: 0.1.0
+appVersion: "4.0.0-SNAPSHOT"
+sources:
+  - https://github.com/tkiss28/spring-petclinic

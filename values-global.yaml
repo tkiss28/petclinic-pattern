@@ -8,3 +8,8 @@ main:
   multiSourceConfig:
     enabled: true
     clusterGroupChartVersion: 0.9.*
+
+petclinic:
+  # Required: publish an image built from ../spring-petclinic/Containerfile first.
+  # Prefer an immutable reference, e.g. quay.io/YOUR_ORG/petclinic@sha256:...
+  image: ""
