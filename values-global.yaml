@@ -1,0 +1,10 @@
+global:
+  pattern: petclinic-pattern
+  singleArgoCD: true
+  secretLoader:
+    disabled: true
+main:
+  variant: prod
+  multiSourceConfig:
+    enabled: true
+    clusterGroupChartVersion: 0.9.*

@@ -1,0 +1,6 @@
+clusterGroup:
+  name: prod
+  namespaces:
+    petclinic-pattern:
+  subscriptions: {}
+  applications: {}
